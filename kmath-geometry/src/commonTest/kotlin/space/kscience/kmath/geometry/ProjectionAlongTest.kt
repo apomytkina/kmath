@@ -27,7 +27,7 @@ internal class ProjectionAlongTest {
     @Test
     fun projectionOntoLine() {
         with(Euclidean2DSpace) {
-            val a = 5.0
+            val a = 4.0
             val b = -3.0
             val c = -15.0
             val normal = Vector2D(-5.0, 3.0)
