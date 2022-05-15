@@ -6,6 +6,7 @@
 package space.kscience.kmath.structures
 
 import kotlin.jvm.JvmInline
+import kotlin.random.Random.Default.nextDouble
 
 /**
  * Specialized [MutableBuffer] implementation over [DoubleArray].
@@ -59,6 +60,11 @@ public fun Buffer<Double>.toDoubleArray(): DoubleArray = when (this) {
     is DoubleBuffer -> array.copyOf()
     else -> DoubleArray(size, ::get)
 }
+
+/**
+ * A chunk of doubles of given [size].
+ */
+public fun nextDoubleBuffer(size: Int): DoubleBuffer = DoubleBuffer(size) { nextDouble() }
 
 /**
  * Returns [DoubleBuffer] over this array.
